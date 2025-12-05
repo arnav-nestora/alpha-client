@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Nestora Alpha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #1a2e27;
+        --color-primary-light: #2a4a3f;
+        --color-surface: #f9f8f4;
+        --color-text: #111c18;
+        --color-text-muted: #3b4a45;
+        --color-border: #e5e5e0;
+        --color-accent-teal: #5bbfa9;
+        --color-accent-coral: #e8a090;
+        --font-display: "Cormorant Garamond", Georgia, serif;
+        --font-body: "Inter", -apple-system, sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--color-surface);
+        color: var(--color-text);
+        line-height: 1.5;
+      }
+
+      /* Navigation */
+      .nav {
+        background: var(--color-primary);
+        padding: 14px 40px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .nav-content {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: white;
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-primary-light) 100%
+        );
+        padding: 64px 40px 60px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 600;
+        color: white;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .hero h1 span {
+        color: var(--color-accent-teal);
+      }
+
+      .hero p {
+        font-size: 17px;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      /* Sections */
+      .section {
+        padding: 56px 40px;
+      }
+
+      .section-inner {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .section-label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--color-accent-coral);
+        margin-bottom: 8px;
+      }
+
+      .section h2 {
+        font-family: var(--font-display);
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 24px;
+      }
+
+      /* Problem Section */
+      .problem-section {
+        background: white;
+      }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+
+      .problem-stat {
+        background: var(--color-surface);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+      }
+
+      .problem-stat .num {
+        font-family: var(--font-display);
+        font-size: 64px;
+        font-weight: 600;
+        color: var(--color-primary);
+        line-height: 1;
+      }
+
+      .problem-stat .unit {
+        font-family: var(--font-display);
+        font-size: 22px;
+        color: var(--color-accent-teal);
+      }
+
+      .problem-stat .label {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        margin-top: 6px;
+      }
+
+      .problem-items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .problem-item {
+        display: flex;
+        gap: 12px;
+        padding: 14px 16px;
+        background: var(--color-surface);
+        border-radius: 8px;
+        border: 1px solid var(--color-border);
+      }
+
+      .problem-item span:first-child {
+        font-size: 18px;
+      }
+      .problem-item span:last-child {
+        font-size: 14px;
+        color: var(--color-text);
+      }
+
+      .problem-quote {
+        margin-top: 24px;
+        padding: 20px 24px;
+        background: linear-gradient(135deg, #fdf8f6 0%, #faf5f3 100%);
+        border-radius: 10px;
+        border-left: 3px solid var(--color-accent-coral);
+      }
+
+      .problem-quote blockquote {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-style: italic;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+      }
+
+      .problem-quote cite {
+        font-size: 12px;
+        color: var(--color-accent-coral);
+        font-style: normal;
+      }
+
+      /* Persona Section */
+      .persona-section {
+        background: var(--color-surface);
+      }
+
+      .persona-card {
+        background: white;
+        border-radius: 16px;
+        padding: 36px;
+        box-shadow: 0 4px 20px rgba(26, 46, 39, 0.06);
+      }
+
+      .persona-header {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .persona-avatar {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, var(--color-accent-teal), #4aa896);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        color: white;
+      }
+
+      .persona-info h3 {
+        font-family: var(--font-display);
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--color-primary);
+      }
+
+      .persona-info p {
+        font-size: 14px;
+        color: var(--color-text-muted);
+      }
+
+      .persona-story {
+        font-size: 15px;
+        color: var(--color-text);
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .persona-jtbd {
+        background: linear-gradient(135deg, #f0f9f6, #e8f5f2);
+        border-left: 3px solid var(--color-accent-teal);
+        border-radius: 0 10px 10px 0;
+        padding: 16px 20px;
+        margin-bottom: 24px;
+      }
+
+      .persona-jtbd p {
+        font-size: 15px;
+        font-style: italic;
+        color: var(--color-primary);
+      }
+
+      .persona-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        padding-top: 20px;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .persona-stat {
+        text-align: center;
+      }
+
+      .persona-stat .val {
+        font-family: var(--font-display);
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--color-primary);
+        line-height: 1;
+      }
+
+      .persona-stat .desc {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      /* Solution Section */
+      .solution-section {
+        background: white;
+      }
+
+      .solution-intro {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .solution-intro h2 {
+        margin-bottom: 8px;
+      }
+
+      .solution-intro h2 span {
+        color: var(--color-accent-teal);
+      }
+
+      .solution-intro p {
+        font-size: 15px;
+        color: var(--color-text-muted);
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .solution-pillars {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .solution-pillar {
+        background: var(--color-surface);
+        border-radius: 10px;
+        padding: 20px 16px;
+        text-align: center;
+        border: 1px solid var(--color-border);
+      }
+
+      .solution-pillar .emoji {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .solution-pillar h4 {
+        font-family: var(--font-display);
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 4px;
+      }
+
+      .solution-pillar p {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        line-height: 1.4;
+      }
+
+      /* How Section */
+      .how-section {
+        background: var(--color-surface);
+      }
+
+      .how-features {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .how-feature {
+        display: flex;
+        gap: 16px;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        border: 1px solid var(--color-border);
+      }
+
+      .how-feature .emoji {
+        font-size: 32px;
+        flex-shrink: 0;
+      }
+
+      .how-feature h3 {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 4px;
+      }
+
+      .how-feature .desc {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        margin-bottom: 10px;
+      }
+
+      .how-feature .details {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .how-feature .details span {
+        font-size: 12px;
+        color: var(--color-accent-teal);
+        font-weight: 500;
+      }
+
+      /* Before/After Section */
+      .transform-section {
+        background: white;
+      }
+
+      .transform-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .transform-card {
+        border-radius: 12px;
+        padding: 28px;
+      }
+
+      .transform-card.before {
+        background: #fdf5f3;
+        border: 2px solid #f5d6cf;
+      }
+
+      .transform-card.after {
+        background: #f0f9f6;
+        border: 2px solid #c5e8de;
+      }
+
+      .transform-card h4 {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .transform-card.before h4 {
+        color: #cc5e52;
+      }
+      .transform-card.after h4 {
+        color: var(--color-accent-teal);
+      }
+
+      .transform-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .transform-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--color-text-muted);
+        line-height: 1.4;
+      }
+
+      .transform-list li span {
+        flex-shrink: 0;
+      }
+
+      .transform-card.before .transform-list li span {
+        color: #cc5e52;
+      }
+      .transform-card.after .transform-list li span {
+        color: var(--color-accent-teal);
+      }
+
+      /* Why Now Section */
+      .why-now-section {
+        background: var(--color-surface);
+      }
+
+      .why-now-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .why-now-card {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 24px;
+        text-align: center;
+      }
+
+      .why-now-card .number {
+        font-family: var(--font-display);
+        font-size: 48px;
+        font-weight: 600;
+        color: var(--color-border);
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      .why-now-card h4 {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 10px;
+      }
+
+      .why-now-card .stat-box {
+        background: linear-gradient(135deg, #f0f9f6, #e8f5f2);
+        border-radius: 6px;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+
+      .why-now-card .stat-box strong {
+        color: var(--color-accent-teal);
+      }
+
+      .why-now-card p {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        line-height: 1.5;
+      }
+
+      /* Privacy Section */
+      .privacy-section {
+        background: var(--color-surface);
+        padding: 64px 40px;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .privacy-inner {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .privacy-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .privacy-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--color-primary);
+        border-radius: 100px;
+        padding: 8px 16px;
+        margin-bottom: 16px;
+      }
+
+      .privacy-badge svg {
+        width: 16px;
+        height: 16px;
+        stroke: white;
+      }
+
+      .privacy-badge span {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: white;
+      }
+
+      .privacy-header h2 {
+        font-family: var(--font-display);
+        font-size: 36px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 12px;
+      }
+
+      .privacy-header h2 span {
+        color: var(--color-accent-teal);
+      }
+
+      .privacy-header p {
+        font-size: 16px;
+        color: var(--color-text-muted);
+        max-width: 560px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .privacy-promise {
+        background: white;
+        border: 2px solid var(--color-accent-teal);
+        border-radius: 16px;
+        padding: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      .privacy-promise-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(
+          135deg,
+          var(--color-accent-teal) 0%,
+          #4ba897 100%
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+      }
+
+      .privacy-promise-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke: white;
+        stroke-width: 2.5;
+      }
+
+      .privacy-promise h3 {
+        font-family: var(--font-display);
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 12px;
+      }
+
+      .privacy-promise p {
+        font-size: 16px;
+        color: var(--color-text-muted);
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .privacy-promise p strong {
+        color: var(--color-primary);
+      }
+
+      .privacy-pillars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .privacy-pillar {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 24px;
+        text-align: center;
+        transition: all 0.2s ease;
+      }
+
+      .privacy-pillar:hover {
+        border-color: var(--color-accent-teal);
+        box-shadow: 0 8px 24px rgba(91, 191, 169, 0.12);
+      }
+
+      .privacy-pillar .icon {
+        width: 52px;
+        height: 52px;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          #2a4a3f 100%
+        );
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+      }
+
+      .privacy-pillar .icon svg {
+        width: 24px;
+        height: 24px;
+        stroke: white;
+      }
+
+      .privacy-pillar h4 {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 8px;
+      }
+
+      .privacy-pillar p {
+        font-size: 14px;
+        color: var(--color-text-muted);
+        line-height: 1.5;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--color-surface);
+        padding: 48px 40px;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-family: var(--font-display);
+        font-size: 26px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 8px;
+      }
+
+      .cta-section p {
+        font-size: 14px;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+
+      .cta-btn.primary {
+        background: var(--color-primary);
+        color: white;
+      }
+
+      .cta-btn.primary:hover {
+        background: #15261f;
+      }
+
+      .cta-btn.secondary {
+        background: white;
+        color: var(--color-primary);
+        border: 1px solid var(--color-border);
+      }
+
+      .cta-btn.secondary:hover {
+        border-color: var(--color-primary);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--color-primary);
+        padding: 24px 40px;
+        text-align: center;
+      }
+
+      .footer p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+      }
+
+      .footer-links {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .footer-links a {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      @media (max-width: 800px) {
+        .problem-grid {
+          grid-template-columns: 1fr;
+        }
+        .problem-stat {
+          max-width: 180px;
+          margin: 0 auto 20px;
+        }
+        .solution-pillars {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .transform-grid {
+          grid-template-columns: 1fr;
+        }
+        .why-now-grid {
+          grid-template-columns: 1fr;
+        }
+        .privacy-pillars {
+          grid-template-columns: 1fr;
+        }
+        .persona-stats {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .privacy-promise {
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav,
+        .section,
+        .privacy-section,
+        .cta-section,
+        .footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .hero {
+          padding: 48px 20px 44px;
+        }
+        .section {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+        .solution-pillars {
+          grid-template-columns: 1fr;
+        }
+        .how-feature {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+        .cta-btn {
+          width: 100%;
+          max-width: 240px;
+          justify-content: center;
+        }
+        .privacy-header h2 {
+          font-size: 28px;
+        }
+        .privacy-promise h3 {
+          font-size: 20px;
+        }
+        .footer-links {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-content">
+        <a href="/alpha/about" class="nav-logo">nestora</a>
+        <div class="nav-links">
+          <a href="/alpha/about" class="active">About</a>
+          <a href="/alpha/welcome">Download</a>
+          <a href="/alpha/testing">How to Use</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>An app that handles life's <span>paperwork</span> for you</h1>
+      <p>
+        Nestora uses AI to read your emails, organize your calendar, and keep
+        track of important documents — so you can focus on what matters.
+      </p>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+      <div class="section-inner">
+        <p class="section-label">The Problem</p>
+        <h2>Sound familiar?</h2>
+
+        <div class="problem-grid">
+          <div class="problem-stat">
+            <span class="num">4.7</span>
+            <span class="unit"> hrs</span>
+            <p class="label">lost weekly to life admin</p>
+          </div>
+          <div class="problem-items">
+            <div class="problem-item">
+              <span>📧</span>
+              <span
+                >Dentist emails about an appointment — sits unread for a
+                week</span
+              >
+            </div>
+            <div class="problem-item">
+              <span>💳</span>
+              <span>Can't find your insurance card when you need it most</span>
+            </div>
+            <div class="problem-item">
+              <span>📅</span>
+              <span
+                >Partner schedules something that conflicts with kid's
+                practice</span
+              >
+            </div>
+            <div class="problem-item">
+              <span>📝</span>
+              <span
+                >School permission slip buried in inbox almost misses
+                deadline</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-quote">
+          <blockquote>
+            "I missed a $1,200 warranty claim because I couldn't find the
+            receipt."
+          </blockquote>
+          <cite>— Real story from a busy parent</cite>
+        </div>
+      </div>
+    </section>
+
+    <!-- Persona Section -->
+    <section class="section persona-section">
+      <div class="section-inner">
+        <p class="section-label">Who It's For</p>
+        <h2>Meet Jessica</h2>
+
+        <div class="persona-card">
+          <div class="persona-header">
+            <div class="persona-avatar">JM</div>
+            <div class="persona-info">
+              <h3>Jessica, 38</h3>
+              <p>Marketing Director • Household of 4</p>
+            </div>
+          </div>
+
+          <p class="persona-story">
+            Jessica manages a demanding career while coordinating schedules for
+            two kids, a spouse, and aging parents. Her inbox overflows with
+            school notices, appointment reminders, insurance documents, and work
+            emails. She's tried apps — Todoist, Google Calendar, Notion — but
+            none of them talk to each other, and she still has to manually enter
+            everything.
+          </p>
+
+          <div class="persona-jtbd">
+            <p>
+              "I need one place that handles the mental load of keeping my
+              family organized — without me having to be the system."
+            </p>
+          </div>
+
+          <div class="persona-stats">
+            <div class="persona-stat">
+              <span class="val">127</span>
+              <span class="desc">online accounts</span>
+            </div>
+            <div class="persona-stat">
+              <span class="val">$2,400</span>
+              <span class="desc">lost yearly to missed deadlines</span>
+            </div>
+            <div class="persona-stat">
+              <span class="val">23</span>
+              <span class="desc">hours/month on life admin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution-section">
+      <div class="section-inner">
+        <div class="solution-intro">
+          <h2>Meet your <span>personal assistant</span></h2>
+          <p>
+            AI that learns from your email and documents to surface tasks,
+            appointments, and conflicts — plus a secure vault for important
+            documents.
+          </p>
+        </div>
+
+        <div class="solution-pillars">
+          <div class="solution-pillar">
+            <div class="emoji">📨</div>
+            <h4>Email Intelligence</h4>
+            <p>AI reads your inbox and extracts action items</p>
+          </div>
+          <div class="solution-pillar">
+            <div class="emoji">📅</div>
+            <h4>Calendar Sync</h4>
+            <p>Appointments detected with conflict alerts</p>
+          </div>
+          <div class="solution-pillar">
+            <div class="emoji">🔐</div>
+            <h4>ID Vault</h4>
+            <p>Store passports, licenses, insurance cards</p>
+          </div>
+          <div class="solution-pillar">
+            <div class="emoji">👨‍👩‍👧</div>
+            <h4>Family Sync</h4>
+            <p>Share calendars and tasks across household</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-section">
+      <div class="section-inner">
+        <p class="section-label">How It Works</p>
+        <h2>Three core functions</h2>
+
+        <div class="how-features">
+          <div class="how-feature">
+            <div class="emoji">📨</div>
+            <div>
+              <h3>Email Intelligence</h3>
+              <p class="desc">
+                Connects to your inbox and automatically detects actionable
+                items — appointments to schedule, tasks to complete, documents
+                to save.
+              </p>
+              <div class="details">
+                <span>✓ Appointment detection</span>
+                <span>✓ Task extraction</span>
+                <span>✓ Deadline alerts</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="how-feature">
+            <div class="emoji">📋</div>
+            <div>
+              <h3>Review & Approve</h3>
+              <p class="desc">
+                AI suggests, you decide. Every extracted item appears in your
+                review queue. Approve with one tap, edit, or dismiss.
+              </p>
+              <div class="details">
+                <span>✓ One-tap approval</span>
+                <span>✓ Edit flexibility</span>
+                <span>✓ Smart prioritization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="how-feature">
+            <div class="emoji">🔐</div>
+            <div>
+              <h3>Secure Document Vault</h3>
+              <p class="desc">
+                Store essential IDs — passports, driver's licenses, insurance
+                cards, health records. Encrypted and accessible only to you.
+              </p>
+              <div class="details">
+                <span>✓ Bank-level encryption</span>
+                <span>✓ Expiry reminders</span>
+                <span>✓ Quick access</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After Section -->
+    <section class="section transform-section">
+      <div class="section-inner">
+        <p class="section-label">The Transformation</p>
+        <h2>Before & After Nestora</h2>
+
+        <div class="transform-grid">
+          <div class="transform-card before">
+            <h4>Before Nestora</h4>
+            <ul class="transform-list">
+              <li><span>✕</span> Emails pile up, action items get lost</li>
+              <li>
+                <span>✕</span> Scramble to find insurance cards at appointments
+              </li>
+              <li><span>✕</span> Spouse double-books soccer and dentist</li>
+              <li><span>✕</span> Miss warranty deadlines, lose money</li>
+              <li>
+                <span>✕</span> Mental load of tracking everything yourself
+              </li>
+            </ul>
+          </div>
+          <div class="transform-card after">
+            <h4>After Nestora</h4>
+            <ul class="transform-list">
+              <li>
+                <span>✓</span> AI surfaces action items before you miss them
+              </li>
+              <li><span>✓</span> All IDs instantly accessible on your phone</li>
+              <li><span>✓</span> Calendar conflicts flagged automatically</li>
+              <li><span>✓</span> Expiration reminders save you thousands</li>
+              <li><span>✓</span> One system handles the mental load for you</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Now Section -->
+    <section class="section why-now-section">
+      <div class="section-inner">
+        <p class="section-label">Why Now</p>
+        <h2>The moment is here</h2>
+
+        <div class="why-now-grid">
+          <div class="why-now-card">
+            <div class="number">1</div>
+            <h4>Content Explosion</h4>
+            <div class="stat-box">
+              Average household: <strong>127 accounts</strong>
+            </div>
+            <p>
+              PDFs, portals, confirmations — unstructured life admin has never
+              been higher.
+            </p>
+          </div>
+          <div class="why-now-card">
+            <div class="number">2</div>
+            <h4>On-Device AI</h4>
+            <div class="stat-box">
+              Apple Intelligence: <strong>100M+ devices</strong>
+            </div>
+            <p>
+              Local processing is consumer-ready. Private document parsing at
+              scale is finally possible.
+            </p>
+          </div>
+          <div class="why-now-card">
+            <div class="number">3</div>
+            <h4>Agent Expectations</h4>
+            <div class="stat-box">
+              <strong>"AI agents"</strong> top search 2024
+            </div>
+            <p>
+              People don't want more tools. They want AI that handles tasks for
+              them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy-section">
+      <div class="privacy-inner">
+        <div class="privacy-header">
+          <div class="privacy-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span>Privacy First</span>
+          </div>
+          <h2>Your data stays <span>on your device</span></h2>
+          <p>
+            Nestora is built differently. Everything runs locally on your iPhone
+            using Apple Intelligence. We never see your emails, documents, or
+            personal information.
+          </p>
+        </div>
+
+        <div class="privacy-promise">
+          <div class="privacy-promise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <h3>We Cannot Access Your Data</h3>
+          <p>
+            This isn't just a policy - it's how the app is built.
+            <strong
+              >Your emails, documents, and personal information never leave your
+              phone.</strong
+            >
+            We have zero access to your data because it never touches our
+            servers. Period.
+          </p>
+        </div>
+
+        <div class="privacy-pillars">
+          <div class="privacy-pillar">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            </div>
+            <h4>100% On-Device</h4>
+            <p>
+              AI processing happens entirely on your iPhone using Apple's secure
+              framework. Nothing is sent to the cloud.
+            </p>
+          </div>
+
+          <div class="privacy-pillar">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+              </svg>
+            </div>
+            <h4>Zero-Knowledge</h4>
+            <p>
+              We literally cannot see your data - even if someone asked us to.
+              It's architecturally impossible.
+            </p>
+          </div>
+
+          <div class="privacy-pillar">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M3 6h18" />
+                <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+              </svg>
+            </div>
+            <h4>Delete Anytime</h4>
+            <p>
+              Your data, your choice. Delete the app and everything goes with it
+              - permanently and completely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <h2>Ready to try Nestora?</h2>
+      <p>
+        Download the alpha and help us shape the future of life organization.
+      </p>
+      <div class="cta-buttons">
+        <a href="/alpha/welcome" class="cta-btn primary">Download App →</a>
+        <a href="/alpha/testing" class="cta-btn secondary">How to Use</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Nestora. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://nestora.ai/terms" target="_blank">Terms of Service</a>
+        <a href="https://nestora.ai/privacy" target="_blank">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script>
+      if (sessionStorage.getItem("nestora_alpha_auth") !== "true") {
+        window.location.href = "/alpha";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/alpha/about", "destination": "/alpha/about.html" },
+    { "source": "/alpha/welcome", "destination": "/alpha/welcome.html" },
+    { "source": "/alpha/testing", "destination": "/alpha/testing.html" },
+    { "source": "/decks/hub", "destination": "/decks/hub.html" },
+    { "source": "/decks/deck", "destination": "/decks/deck.html" },
+    { "source": "/decks/education", "destination": "/decks/education.html" },
+    { "source": "/decks/eldercare", "destination": "/decks/eldercare.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/privacy", "destination": "/privacy.html" }
+  ]
+}

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Use — Nestora Alpha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #1a2e27;
+        --color-primary-light: #2a4a3f;
+        --color-surface: #f9f8f4;
+        --color-text: #111c18;
+        --color-text-muted: #3b4a45;
+        --color-border: #e5e5e0;
+        --color-accent-teal: #5bbfa9;
+        --color-accent-gold: #d4a853;
+        --font-display: "Cormorant Garamond", Georgia, serif;
+        --font-body: "Inter", -apple-system, sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--color-surface);
+        color: var(--color-text);
+        line-height: 1.5;
+      }
+
+      /* Navigation */
+      .nav {
+        background: var(--color-primary);
+        padding: 14px 40px;
+      }
+
+      .nav-content {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: white;
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-primary-light) 100%
+        );
+        padding: 36px 40px 32px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-family: var(--font-display);
+        font-size: 30px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 6px;
+      }
+
+      .hero p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      /* Main */
+      .main {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 28px 40px 36px;
+      }
+
+      /* Section Header */
+      .section-header {
+        margin-bottom: 16px;
+      }
+
+      .section-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--color-accent-teal);
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        margin-bottom: 4px;
+      }
+
+      .section-header h2 {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--color-primary);
+      }
+
+      .section-lead {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        margin-top: 2px;
+      }
+
+      /* Test Tasks */
+      .test-tasks {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .test-task {
+        display: flex;
+        gap: 12px;
+        background: white;
+        padding: 14px 16px;
+        border-radius: 8px;
+        border: 1px solid var(--color-border);
+        transition: all 0.15s;
+        cursor: pointer;
+      }
+
+      .test-task:hover {
+        border-color: var(--color-accent-teal);
+      }
+
+      .test-task.completed {
+        background: #f0faf7;
+        border-color: var(--color-accent-teal);
+      }
+
+      .test-task.completed .task-checkbox {
+        background: var(--color-accent-teal);
+        border-color: var(--color-accent-teal);
+      }
+
+      .test-task.completed .task-checkbox::after {
+        content: "✓";
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .task-checkbox {
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--color-border);
+        border-radius: 5px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+        margin-top: 1px;
+      }
+
+      .task-content h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-text);
+        margin-bottom: 1px;
+      }
+
+      .task-content p {
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+
+      /* Notes Box */
+      .notes-box {
+        background: #fef9e7;
+        border: 1px solid #eed888;
+        border-radius: 8px;
+        padding: 14px 16px;
+        margin-top: 16px;
+      }
+
+      .notes-box h3 {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 8px;
+      }
+
+      .notes-list {
+        list-style: none;
+      }
+
+      .notes-list li {
+        font-size: 12px;
+        color: var(--color-text);
+        padding-left: 14px;
+        position: relative;
+        margin-bottom: 4px;
+      }
+
+      .notes-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .notes-list li::before {
+        content: "•";
+        position: absolute;
+        left: 4px;
+        color: var(--color-accent-gold);
+      }
+
+      /* Feedback Section */
+      .feedback-section {
+        background: white;
+        padding: 32px 40px;
+      }
+
+      .feedback-content {
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      .feedback-intro {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      .feedback-intro h2 {
+        font-family: var(--font-display);
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 4px;
+      }
+
+      .feedback-intro p {
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      /* Feedback Options */
+      .feedback-options {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .feedback-option {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 20px 16px;
+        text-align: center;
+        transition: all 0.15s;
+      }
+
+      .feedback-option:hover {
+        border-color: var(--color-accent-teal);
+      }
+
+      .feedback-icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .feedback-option h3 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 4px;
+      }
+
+      .feedback-option p {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .feedback-btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.15s;
+      }
+
+      .feedback-btn.primary {
+        background: var(--color-primary);
+        color: white;
+      }
+
+      .feedback-btn.primary:hover {
+        background: #15261f;
+      }
+
+      .feedback-btn.secondary {
+        background: white;
+        color: var(--color-text-muted);
+        border: 1px solid var(--color-border);
+      }
+
+      /* Quick Actions */
+      .quick-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 24px;
+        padding-top: 20px;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .quick-action {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 9px 14px;
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+        font-size: 12px;
+        color: var(--color-text);
+        text-decoration: none;
+        transition: all 0.15s;
+      }
+
+      .quick-action:hover {
+        border-color: var(--color-primary);
+        background: var(--color-surface);
+      }
+
+      /* Shake Banner */
+      .shake-banner {
+        background: linear-gradient(135deg, #e8f5f1 0%, #d4ede6 100%);
+        border-bottom: 1px solid var(--color-accent-teal);
+        padding: 16px 40px;
+      }
+
+      .shake-content {
+        max-width: 680px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .shake-icon {
+        font-size: 28px;
+        flex-shrink: 0;
+      }
+
+      .shake-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .shake-text strong {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-primary);
+      }
+
+      .shake-text span {
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--color-primary);
+        padding: 28px 40px;
+        text-align: center;
+      }
+
+      .footer h2 {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 4px;
+      }
+
+      .footer p {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-links {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .footer-links a {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      @media (max-width: 700px) {
+        .feedback-options {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav,
+        .hero,
+        .feedback-section,
+        .footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .shake-banner {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .main {
+          padding: 24px 20px 28px;
+        }
+        .quick-actions {
+          flex-direction: column;
+          align-items: center;
+        }
+        .quick-action {
+          width: 100%;
+          max-width: 200px;
+          justify-content: center;
+        }
+        .shake-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+        }
+        .footer-links {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-content">
+        <a href="/alpha/about" class="nav-logo">nestora</a>
+        <div class="nav-links">
+          <a href="/alpha/about">About</a>
+          <a href="/alpha/welcome">Download</a>
+          <a href="/alpha/testing" class="active">How to Use</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>Thanks for Testing Nestora!</h1>
+      <p>
+        This should take about <strong>15-20 minutes</strong>. Here's what to
+        try and how to share feedback.
+      </p>
+    </section>
+
+    <!-- Shake to Report - Above Fold -->
+    <div class="shake-banner">
+      <div class="shake-content">
+        <div class="shake-icon">📱</div>
+        <div class="shake-text">
+          <strong>Found a bug or have feedback?</strong>
+          <span
+            >Shake your phone anytime to instantly report it with a
+            screenshot.</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="section-header">
+        <div class="section-label">Things to Try</div>
+        <h2>Test Tasks</h2>
+        <p class="section-lead">
+          Click to mark as you go (just for your reference).
+        </p>
+      </div>
+
+      <div class="test-tasks">
+        <div class="test-task" onclick="this.classList.toggle('completed')">
+          <div class="task-checkbox"></div>
+          <div class="task-content">
+            <h4>Complete the onboarding</h4>
+            <p>Create your account and connect your email.</p>
+          </div>
+        </div>
+
+        <div class="test-task" onclick="this.classList.toggle('completed')">
+          <div class="task-checkbox"></div>
+          <div class="task-content">
+            <h4>Review AI-suggested items</h4>
+            <p>Check "For Your Review" — try approving, snoozing, ignoring.</p>
+          </div>
+        </div>
+
+        <div class="test-task" onclick="this.classList.toggle('completed')">
+          <div class="task-checkbox"></div>
+          <div class="task-content">
+            <h4>Add a task manually</h4>
+            <p>Create a new task with due date and priority.</p>
+          </div>
+        </div>
+
+        <div class="test-task" onclick="this.classList.toggle('completed')">
+          <div class="task-checkbox"></div>
+          <div class="task-content">
+            <h4>Upload documents</h4>
+            <p>
+              Try different types: ID (license, passport), insurance card,
+              utility bill, invoice/receipt.
+            </p>
+          </div>
+        </div>
+
+        <div class="test-task" onclick="this.classList.toggle('completed')">
+          <div class="task-checkbox"></div>
+          <div class="task-content">
+            <h4>Explore the calendar</h4>
+            <p>Navigate months, tap dates, check for pending events.</p>
+          </div>
+        </div>
+
+        <div class="test-task" onclick="this.classList.toggle('completed')">
+          <div class="task-checkbox"></div>
+          <div class="task-content">
+            <h4>Chat with Nesto</h4>
+            <p>Ask the AI about your schedule or documents.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-box">
+        <h3>⚠️ Alpha Reminders</h3>
+        <ul class="notes-list">
+          <li>This is early software — bugs are expected</li>
+          <li>Some features may be incomplete</li>
+          <li>Don't rely on Nestora as your only system yet</li>
+          <li>Requires iPhone 15 Pro or newer</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="feedback-section">
+      <div class="feedback-content">
+        <div class="feedback-intro">
+          <h2>Share Feedback</h2>
+          <p>
+            Tell us what worked, what didn't, and what would make Nestora
+            better.
+          </p>
+        </div>
+
+        <div class="feedback-options">
+          <div class="feedback-option">
+            <div class="feedback-icon">📝</div>
+            <h3>Quick Survey</h3>
+            <p>5 min. A few questions about your experience.</p>
+            <a
+              href="https://tally.so/r/xXVKlG"
+              target="_blank"
+              class="feedback-btn primary"
+              >Take Survey</a
+            >
+          </div>
+
+          <div class="feedback-option">
+            <div class="feedback-icon">📞</div>
+            <h3>Chat With Us</h3>
+            <p>20 min. Tell us more in a quick call.</p>
+            <a
+              href="https://calendly.com/rakhib/nestora-alpha-feedback"
+              target="_blank"
+              class="feedback-btn primary"
+              >Book a Call</a
+            >
+          </div>
+
+          <div class="feedback-option">
+            <div class="feedback-icon">📱</div>
+            <h3>In-App Report</h3>
+            <p>Found a bug? Shake your phone to report.</p>
+            <span class="feedback-btn secondary">Shake to Report</span>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <a href="mailto:info@nestora.ai" class="quick-action">✉️ Email us</a>
+          <a
+            href="https://calendly.com/rakhib/nestora-alpha-feedback"
+            target="_blank"
+            class="quick-action"
+            >📅 Schedule call</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <h2>Thank You!</h2>
+      <p>Your feedback is shaping the future of Nestora.</p>
+      <div class="footer-links">
+        <a href="https://nestora.ai/terms" target="_blank">Terms of Service</a>
+        <a href="https://nestora.ai/privacy" target="_blank">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script>
+      if (sessionStorage.getItem("nestora_alpha_auth") !== "true") {
+        window.location.href = "/alpha";
+      }
+    </script>
+  </body>
+</html>

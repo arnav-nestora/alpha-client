@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nestora Alpha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #1a2e27;
+        --color-surface: #f9f8f4;
+        --color-text: #111c18;
+        --color-text-muted: #3b4a45;
+        --color-border: #e5e5e0;
+        --color-accent-teal: #5bbfa9;
+        --font-display: "Cormorant Garamond", Georgia, serif;
+        --font-body: "Inter", -apple-system, sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--color-surface);
+        color: var(--color-text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .login-container {
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .logo {
+        font-family: var(--font-display);
+        font-size: 48px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 8px;
+      }
+
+      .alpha-badge {
+        display: inline-block;
+        background: var(--color-accent-teal);
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 4px 12px;
+        border-radius: 100px;
+        margin-bottom: 48px;
+      }
+
+      .login-card {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 4px 24px rgba(26, 46, 39, 0.08);
+      }
+
+      .login-card h2 {
+        font-family: var(--font-display);
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 8px;
+      }
+
+      .login-card p {
+        font-size: 15px;
+        color: var(--color-text-muted);
+        margin-bottom: 32px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--color-text);
+        margin-bottom: 8px;
+        text-align: left;
+      }
+
+      .form-group input {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: var(--font-body);
+        transition: border-color 0.2s ease;
+      }
+
+      .form-group input:focus {
+        outline: none;
+        border-color: var(--color-primary);
+      }
+
+      .error-message {
+        background: #fee;
+        color: #c00;
+        font-size: 14px;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 16px;
+        background: var(--color-primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .submit-btn:hover {
+        background: #15261f;
+      }
+
+      .help-text {
+        margin-top: 24px;
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      .help-text a {
+        color: var(--color-accent-teal);
+        text-decoration: none;
+      }
+
+      .help-text a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">nestora</div>
+      <span class="alpha-badge">Alpha Access</span>
+
+      <div class="login-card">
+        <h2>Welcome, Tester</h2>
+        <p>Enter the password you received to access the alpha.</p>
+
+        <div class="error-message" id="errorMessage">
+          Incorrect password. Please try again.
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter alpha password"
+              required
+            />
+          </div>
+          <button type="submit" class="submit-btn">Enter</button>
+        </form>
+
+        <p class="help-text">
+          Need help? <a href="mailto:alpha@nestora.app">Contact us</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      const PASSWORD = "nestora2025";
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const input = document.getElementById("password").value;
+          const errorMessage = document.getElementById("errorMessage");
+
+          if (input === PASSWORD) {
+            sessionStorage.setItem("nestora_alpha_auth", "true");
+            window.location.href = "/alpha/about";
+          } else {
+            errorMessage.classList.add("show");
+            document.getElementById("password").value = "";
+          }
+        });
+    </script>
+  </body>
+</html>

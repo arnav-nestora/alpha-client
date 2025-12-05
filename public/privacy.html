@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Nestora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-bg: #f9f8f4;
+        --color-primary: #1a2e27;
+        --color-accent: #5bbfa9;
+        --color-text: #2d3d38;
+        --color-text-muted: #5a6b65;
+        --color-text-light: #7a8b85;
+        --color-white: #ffffff;
+        --color-border: #e5e5e0;
+        --color-card: #ffffff;
+        --color-highlight: #f0faf7;
+        --font-display: "Cormorant Garamond", Georgia, serif;
+        --font-body: "DM Sans", -apple-system, sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--color-text);
+        background: var(--color-bg);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Header */
+      header {
+        background: var(--color-white);
+        border-bottom: 1px solid var(--color-border);
+        padding: 16px 24px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        text-decoration: none;
+      }
+
+      .logo-text {
+        font-family: var(--font-display);
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--color-primary);
+        letter-spacing: -0.5px;
+      }
+
+      .back-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--color-text-muted);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .back-link:hover {
+        color: var(--color-primary);
+      }
+
+      .back-link svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      /* Main */
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 48px 24px 100px;
+      }
+
+      /* Page Header */
+      .page-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .page-title {
+        font-family: var(--font-display);
+        font-size: 48px;
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 12px;
+        letter-spacing: -1px;
+      }
+
+      .page-meta {
+        font-size: 14px;
+        color: var(--color-text-light);
+      }
+
+      /* Quick Summary Hero */
+      .summary-hero {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          #2a4a3f 100%
+        );
+        border-radius: 20px;
+        padding: 36px 32px;
+        margin-bottom: 48px;
+        color: white;
+      }
+
+      .summary-hero h2 {
+        font-family: var(--font-display);
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .summary-hero h2 svg {
+        width: 28px;
+        height: 28px;
+        opacity: 0.9;
+      }
+
+      .summary-hero > p {
+        opacity: 0.9;
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .summary-hero ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .summary-hero li {
+        padding: 10px 0;
+        padding-left: 28px;
+        position: relative;
+        font-size: 15px;
+        opacity: 0.95;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .summary-hero li:last-child {
+        border-bottom: none;
+      }
+
+      .summary-hero li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--color-accent);
+        font-weight: 600;
+      }
+
+      .summary-note {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 13px;
+        opacity: 0.7;
+      }
+
+      /* Section */
+      .section {
+        margin-bottom: 40px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .section-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--color-highlight);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .section-icon svg {
+        width: 22px;
+        height: 22px;
+        color: var(--color-accent);
+        stroke: var(--color-accent);
+      }
+
+      .section-title {
+        font-family: var(--font-display);
+        font-size: 28px;
+        font-weight: 500;
+        color: var(--color-primary);
+        letter-spacing: -0.5px;
+      }
+
+      .section-content {
+        background: var(--color-card);
+        border-radius: 16px;
+        padding: 28px;
+        border: 1px solid var(--color-border);
+      }
+
+      .section-content p {
+        margin-bottom: 16px;
+        color: var(--color-text);
+      }
+
+      .section-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-content a {
+        color: var(--color-accent);
+        text-decoration: none;
+      }
+
+      .section-content a:hover {
+        text-decoration: underline;
+      }
+
+      /* Subsection */
+      .subsection {
+        margin-top: 28px;
+        padding-top: 28px;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .subsection:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+
+      .subsection-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 12px;
+      }
+
+      .subsection-label {
+        display: inline-block;
+        background: var(--color-highlight);
+        color: #2a7a62;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Lists */
+      .content-list {
+        margin: 16px 0;
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .content-list li {
+        padding: 10px 0 10px 28px;
+        position: relative;
+        border-bottom: 1px solid var(--color-border);
+        color: var(--color-text);
+      }
+
+      .content-list li:last-child {
+        border-bottom: none;
+      }
+
+      .content-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18px;
+        width: 8px;
+        height: 8px;
+        background: var(--color-accent);
+        border-radius: 50%;
+      }
+
+      /* Highlight box */
+      .highlight-box {
+        background: #fafbfa;
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin: 20px 0;
+        border: 1px solid var(--color-border);
+      }
+
+      .highlight-box p {
+        margin-bottom: 12px;
+        font-size: 15px;
+      }
+
+      .highlight-box p:last-child {
+        margin-bottom: 0;
+      }
+
+      .highlight-box strong {
+        color: var(--color-primary);
+      }
+
+      .highlight-box .content-list {
+        margin: 12px 0;
+      }
+
+      .highlight-box .content-list li {
+        padding: 8px 0 8px 24px;
+        font-size: 14px;
+      }
+
+      .highlight-box .content-list li::before {
+        top: 15px;
+        width: 6px;
+        height: 6px;
+      }
+
+      /* Warning/Not box */
+      .not-box {
+        background: #fef8f6;
+        border: 1px solid #f0ddd8;
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin-top: 16px;
+      }
+
+      .not-box p {
+        margin: 0;
+        font-size: 14px;
+        color: #8b5a4a;
+      }
+
+      .not-box strong {
+        color: #7a4a3a;
+      }
+
+      /* Do/Don't boxes */
+      .dont-box {
+        background: #fef6f5;
+        border: 1px solid #f5d5d0;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .dont-box h4 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #b54a3c;
+      }
+
+      .dont-box ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        color: #6b4a44;
+      }
+
+      .dont-box li {
+        padding: 6px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .dont-box li::before {
+        content: "×";
+        position: absolute;
+        left: 0;
+        color: #b54a3c;
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      /* Contact Card */
+      .contact-card {
+        background: var(--color-primary);
+        border-radius: 20px;
+        padding: 36px 32px;
+        color: white;
+        margin-top: 48px;
+      }
+
+      .contact-card h2 {
+        font-family: var(--font-display);
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
+      .contact-card p {
+        opacity: 0.9;
+        margin-bottom: 12px;
+        font-size: 15px;
+      }
+
+      .contact-card a {
+        color: var(--color-accent);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .contact-card a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--color-white);
+        border-top: 1px solid var(--color-border);
+        padding: 32px 24px;
+        margin-top: 60px;
+      }
+
+      .footer-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 24px;
+      }
+
+      .footer-links a {
+        color: var(--color-text-muted);
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .footer-links a:hover {
+        color: var(--color-primary);
+      }
+
+      .footer-copy {
+        font-size: 13px;
+        color: var(--color-text-light);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        main {
+          padding: 32px 20px 80px;
+        }
+
+        .page-title {
+          font-size: 36px;
+        }
+
+        .section-title {
+          font-size: 24px;
+        }
+
+        .section-content {
+          padding: 24px 20px;
+        }
+
+        .summary-hero {
+          padding: 28px 24px;
+        }
+
+        .summary-hero h2 {
+          font-size: 22px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .page-title {
+          font-size: 28px;
+        }
+
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        .section-title {
+          font-size: 22px;
+        }
+
+        .section-content {
+          padding: 20px 16px;
+        }
+
+        .highlight-box {
+          padding: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <span class="logo-text">nestora</span>
+        </a>
+        <a href="/" class="back-link">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          Back to Home
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-header">
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="page-meta">Last Updated: November 29, 2025</p>
+      </div>
+
+      <!-- Quick Summary -->
+      <div class="summary-hero">
+        <h2>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          Plain-Language Summary
+        </h2>
+        <p>
+          For ease of understanding, below is a simple summary of key points.
+          This summary does not replace the legal terms below it.
+        </p>
+        <ul>
+          <li>
+            Nestora processes your emails, calendar events, documents, and tasks
+            only on your device.
+          </li>
+          <li>
+            We do not upload or store your email content, calendar titles,
+            document text, contacts, or personal content on our servers.
+          </li>
+          <li>
+            We only send the minimal structured data required to enable features
+            like reminders, availability dashboards, anonymized usage analytics,
+            and app performance monitoring.
+          </li>
+          <li>
+            We do not sell your data, share personal content with advertisers,
+            or use your personal content to train AI models.
+          </li>
+          <li>
+            You maintain control over your data and may request deletion of any
+            cloud-stored operational data tied to your account.
+          </li>
+          <li>
+            For Gmail integrations, Nestora complies with Google API Limited Use
+            requirements.
+          </li>
+        </ul>
+        <p class="summary-note">The complete legal policy is below.</p>
+      </div>
+
+      <!-- Intro -->
+      <div class="section">
+        <div class="section-content">
+          <p>
+            This Privacy Policy explains how Piggybank Ventures LLC d/b/a
+            Nestora ("Nestora," "we," "our," or "us") collects, uses, stores,
+            and protects personal information in connection with the Nestora
+            mobile application and related services (the "App").
+          </p>
+          <p>
+            Nestora is committed to privacy-by-design. Our architecture
+            minimizes data collection and processes personal content primarily
+            on the user's device, not on Nestora servers.
+          </p>
+          <p>
+            This Privacy Policy applies to users located in the United States
+            and Canada. Nestora is not marketed or intended for use within the
+            European Union or other jurisdictions requiring GDPR-level
+            compliance.
+          </p>
+          <p>
+            If you do not agree to this Privacy Policy, you must discontinue use
+            of the App.
+          </p>
+        </div>
+      </div>
+
+      <!-- Information We Collect -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+              />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+          </div>
+          <h2 class="section-title">Information We Collect and Process</h2>
+        </div>
+        <div class="section-content">
+          <div class="subsection">
+            <span class="subsection-label">Stays on Your Device</span>
+            <h3 class="subsection-title">
+              Information Processed Locally on Your Device (Not Sent to Nestora)
+            </h3>
+            <p>
+              Nestora performs most analysis and feature generation directly on
+              your device. The following information may be accessed locally but
+              is never transmitted to Nestora servers:
+            </p>
+            <ul class="content-list">
+              <li>
+                Calendar event titles, descriptions, locations, participants
+              </li>
+              <li>Email subject lines and bodies</li>
+              <li>
+                Document and file contents, attachments, and scanned images
+              </li>
+              <li>Photos you choose to analyze</li>
+              <li>Notes, memos, and user-entered tasks</li>
+              <li>Contact names, email addresses, and phone numbers</li>
+              <li>
+                Raw timestamps, time-of-day information, and scheduling metadata
+              </li>
+              <li>Educational platform content (where applicable)</li>
+            </ul>
+            <p>
+              This information remains exclusively on your device and is not
+              visible to Nestora.
+            </p>
+          </div>
+
+          <div class="subsection">
+            <span class="subsection-label">Minimal Cloud Data</span>
+            <h3 class="subsection-title">
+              Information Transmitted to Nestora Servers (Minimal, Structured
+              Only)
+            </h3>
+            <p>
+              We transmit only what is necessary to enable essential cloud-based
+              features.
+            </p>
+
+            <div class="highlight-box">
+              <p>
+                <strong>Calendar Availability (Dashboards & Insights)</strong>
+              </p>
+              <p>We may collect de-identified availability data, such as:</p>
+              <ul class="content-list">
+                <li>"Busy" or "Free" time blocks</li>
+                <li>Anonymous event identifiers</li>
+                <li>Anonymous user/family member identifiers</li>
+                <li>Optional category labels (e.g., Kids, Errands, Travel)</li>
+              </ul>
+              <div class="not-box">
+                <p>
+                  <strong>We do NOT send:</strong> event titles, descriptions,
+                  participants, locations, attachments, or precise timestamps.
+                </p>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <p><strong>Reminders & Notifications</strong></p>
+              <p>
+                To deliver reminders even when the App is closed or not running:
+              </p>
+              <ul class="content-list">
+                <li>Anonymous reminder tokens</li>
+                <li>Reminder trigger times</li>
+                <li>Reminder type (e.g., "10 minutes before")</li>
+              </ul>
+              <div class="not-box">
+                <p>
+                  <strong>We do NOT send:</strong> reminder titles, personal
+                  notes, or underlying content.
+                </p>
+              </div>
+            </div>
+
+            <div class="highlight-box">
+              <p><strong>Basic Usage Analytics (Non-Content)</strong></p>
+              <p>Collected automatically unless restricted by OS settings:</p>
+              <ul class="content-list">
+                <li>App open frequency</li>
+                <li>Navigation patterns and screen flows</li>
+                <li>Feature engagement (e.g., "created a reminder")</li>
+                <li>Device and performance diagnostics</li>
+              </ul>
+              <p>
+                This does not include any user-generated text or personal
+                content.
+              </p>
+            </div>
+
+            <div class="highlight-box">
+              <p><strong>Aggregated AI/ML Telemetry (Non-Personal)</strong></p>
+              <p>
+                To improve suggestions and app intelligence, we may collect:
+              </p>
+              <ul class="content-list">
+                <li>Acceptance/rejection patterns of suggestions</li>
+                <li>
+                  High-level behavioral trends (e.g., morning vs. evening task
+                  completion)
+                </li>
+                <li>Category-level engagement (Kids, Health, Bills, etc.)</li>
+              </ul>
+              <p>
+                We do not collect raw content, free text, or identifiable
+                information for AI training. All telemetry is aggregated and
+                de-identified.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How We Use Information -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </div>
+          <h2 class="section-title">How We Use Information</h2>
+        </div>
+        <div class="section-content">
+          <p>We use collected information to:</p>
+          <ul class="content-list">
+            <li>
+              Provide personalized organization features (tasks, reminders,
+              dashboards)
+            </li>
+            <li>Improve App performance, reliability, and personalization</li>
+            <li>
+              Analyze anonymized user patterns to enhance machine learning
+            </li>
+            <li>Maintain security and compliance</li>
+            <li>Send reminders and time-based notifications</li>
+            <li>Provide customer support</li>
+          </ul>
+
+          <div class="dont-box">
+            <h4>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+              </svg>
+              Nestora does NOT
+            </h4>
+            <ul>
+              <li>Sell personal information</li>
+              <li>Share personal content with third-party advertisers</li>
+              <li>Use personal content to train machine learning models</li>
+              <li>
+                Build marketing profiles or use personal content for advertising
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sharing of Information -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+          </div>
+          <h2 class="section-title">Sharing of Information</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            We do not sell or rent your information. We only share data in the
+            following situations:
+          </p>
+
+          <div class="subsection">
+            <h3 class="subsection-title">Service Providers</h3>
+            <p>
+              We may share minimal operational data with third-party vendors
+              that support our infrastructure (e.g., cloud hosting). Vendors
+              only receive anonymized or non-content operational data necessary
+              for their function.
+            </p>
+          </div>
+
+          <div class="subsection">
+            <h3 class="subsection-title">Legal Requirements</h3>
+            <p>
+              We may disclose information if required by applicable law,
+              subpoena, court order, or regulatory request.
+            </p>
+          </div>
+
+          <div class="subsection">
+            <h3 class="subsection-title">Google API Limited Use Disclosure</h3>
+            <p>
+              If you connect a Gmail account, Nestora's use of Gmail data is
+              strictly limited per Google API Services User Data Policy.
+            </p>
+
+            <div class="dont-box">
+              <h4>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="15" y1="9" x2="9" y2="15" />
+                  <line x1="9" y1="9" x2="15" y2="15" />
+                </svg>
+                We do not
+              </h4>
+              <ul>
+                <li>Use Gmail content for advertising or profiling</li>
+                <li>
+                  Share Gmail content with third parties (except as needed for
+                  core functionality or required by law)
+                </li>
+                <li>
+                  Permit humans to read Gmail content unless explicitly
+                  consented to, required for security/abuse investigations,
+                  required by law, or aggregated and anonymized for internal
+                  operations
+                </li>
+              </ul>
+            </div>
+            <p>
+              Access to Gmail is limited to what is necessary for the App to
+              function. Nestora complies with all Google API Limited Use
+              requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Retention -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <h2 class="section-title">Data Retention</h2>
+        </div>
+        <div class="section-content">
+          <ul class="content-list">
+            <li>
+              <strong>On-device data:</strong> Retained until the user deletes
+              the App or clears local storage.
+            </li>
+            <li>
+              <strong>Cloud-stored operational data:</strong> Retained while the
+              account is active and deleted upon user request or account
+              closure.
+            </li>
+            <li>
+              <strong>Aggregated analytics:</strong> Retained indefinitely in
+              fully de-identified form.
+            </li>
+          </ul>
+          <p>
+            We retain minimal data for as long as needed to provide services.
+            You may request deletion at any time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Data Security -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h2 class="section-title">Data Security</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            We use commercially reasonable safeguards to protect data,
+            including:
+          </p>
+          <ul class="content-list">
+            <li>TLS encryption for data in transit</li>
+            <li>Encrypted cloud storage where applicable</li>
+            <li>Access controls, logging, and monitoring</li>
+          </ul>
+          <p>
+            No system is 100% secure. You accept the inherent risks of
+            transmitting information electronically.
+          </p>
+        </div>
+      </div>
+
+      <!-- Your Rights -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+          <h2 class="section-title">Your Rights and Choices</h2>
+        </div>
+        <div class="section-content">
+          <p>Depending on your jurisdiction, you may have rights to:</p>
+          <ul class="content-list">
+            <li>Access and obtain a copy of your personal data</li>
+            <li>Request deletion of cloud-stored operational data</li>
+            <li>Withdraw consent for certain data uses</li>
+            <li>Opt out of analytics collection via device privacy settings</li>
+          </ul>
+          <p>
+            To exercise any of these rights, contact
+            <a href="mailto:hello@nestora.ai">hello@nestora.ai</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Third-Party Services -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+              />
+              <path
+                d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+              />
+            </svg>
+          </div>
+          <h2 class="section-title">Third-Party Services</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            The App integrates with services including Google (Gmail, Calendar),
+            Apple (CalDAV, notifications), and Microsoft (Outlook). These
+            services are governed by their own privacy policies. We are not
+            responsible for their data handling practices.
+          </p>
+        </div>
+      </div>
+
+      <!-- Children's Privacy -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h2 class="section-title">Children's Privacy</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            Nestora is not directed at children under 13. We do not knowingly
+            collect personal information from children under 13. If we learn
+            that we have collected such information, we will promptly delete it.
+          </p>
+        </div>
+      </div>
+
+      <!-- Apple Platform Requirements -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12.01" y2="18" />
+            </svg>
+          </div>
+          <h2 class="section-title">Apple Platform Requirements</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            The App uses Apple's privacy-preserving technologies, including:
+          </p>
+          <ul class="content-list">
+            <li>
+              <strong>App Tracking Transparency (ATT):</strong> We do not track
+              users across apps or websites.
+            </li>
+            <li>
+              <strong>Privacy Nutrition Labels:</strong> Our App Store listing
+              accurately reflects our data practices.
+            </li>
+            <li>
+              <strong>On-Device Processing:</strong> Core features use on-device
+              AI (where supported).
+            </li>
+          </ul>
+          <p>You may adjust privacy permissions through your iOS Settings.</p>
+        </div>
+      </div>
+
+      <!-- Changes to This Policy -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+              />
+              <path
+                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+              />
+            </svg>
+          </div>
+          <h2 class="section-title">Changes to This Policy</h2>
+        </div>
+        <div class="section-content">
+          <p>
+            We may update this Privacy Policy from time to time. Material
+            changes will be communicated via in-app notification, email, or
+            banner message. Continued use of the App following any update
+            constitutes your acceptance of the revised policy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="contact-card">
+        <h2>Contact Us</h2>
+        <p>
+          If you have questions, concerns, or requests regarding this Privacy
+          Policy, please contact:
+        </p>
+        <p><strong>Piggybank Ventures LLC d/b/a Nestora</strong></p>
+        <p>Email: <a href="mailto:hello@nestora.ai">hello@nestora.ai</a></p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms & Conditions</a>
+          <a href="mailto:hello@nestora.ai">Contact</a>
+        </div>
+        <p class="footer-copy">
+          © 2025 Piggybank Ventures LLC. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

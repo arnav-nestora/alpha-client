@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome — Nestora Alpha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-primary: #1a2e27;
+        --color-primary-light: #2a4a3f;
+        --color-surface: #f9f8f4;
+        --color-text: #111c18;
+        --color-text-muted: #3b4a45;
+        --color-border: #e5e5e0;
+        --color-accent-teal: #5bbfa9;
+        --font-display: "Cormorant Garamond", Georgia, serif;
+        --font-body: "Inter", -apple-system, sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--color-surface);
+        color: var(--color-text);
+        line-height: 1.5;
+      }
+
+      /* Navigation - Dark */
+      .nav {
+        background: var(--color-primary);
+        padding: 14px 40px;
+      }
+
+      .nav-content {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: white;
+      }
+
+      /* Hero - Dark solid */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--color-primary) 0%,
+          var(--color-primary-light) 100%
+        );
+        padding: 44px 40px 40px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-family: var(--font-display);
+        font-size: 34px;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 8px;
+      }
+
+      .hero p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      /* Main */
+      .main {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 32px 40px 40px;
+      }
+
+      /* Download Card */
+      .download-card {
+        background: white;
+        border-radius: 12px;
+        padding: 28px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(26, 46, 39, 0.06);
+        margin-bottom: 20px;
+      }
+
+      .download-card h2 {
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+      }
+
+      .download-card > p {
+        font-size: 14px;
+        color: var(--color-text-muted);
+        margin-bottom: 18px;
+      }
+
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #007aff;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+
+      .download-btn:hover {
+        background: #0066dd;
+      }
+      .download-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .requirements {
+        background: #f0faf7;
+        border: 1px solid var(--color-accent-teal);
+        border-radius: 8px;
+        padding: 14px 16px;
+        margin-top: 18px;
+        text-align: left;
+      }
+
+      .requirements h4 {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+      }
+
+      .requirements ul {
+        list-style: none;
+      }
+      .requirements li {
+        font-size: 13px;
+        color: var(--color-text-muted);
+        padding-left: 18px;
+        position: relative;
+        margin-bottom: 3px;
+      }
+      .requirements li:last-child {
+        margin-bottom: 0;
+      }
+      .requirements li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--color-accent-teal);
+        font-weight: 600;
+      }
+      .requirements a {
+        color: var(--color-accent-teal);
+        text-decoration: none;
+      }
+      .requirements a:hover {
+        text-decoration: underline;
+      }
+
+      /* Quick Start */
+      .quick-start {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 2px 8px rgba(26, 46, 39, 0.06);
+      }
+
+      .quick-start h3 {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--color-primary);
+        margin-bottom: 16px;
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .step {
+        display: flex;
+        gap: 12px;
+      }
+
+      .step-num {
+        width: 26px;
+        height: 26px;
+        background: var(--color-primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+        flex-shrink: 0;
+      }
+
+      .step-content h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--color-text);
+        margin-bottom: 1px;
+      }
+
+      .step-content p {
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      .step-content a {
+        color: var(--color-accent-teal);
+        text-decoration: none;
+      }
+      .step-content a:hover {
+        text-decoration: underline;
+      }
+
+      /* CTA Bar */
+      .cta-bar {
+        background: var(--color-primary);
+        padding: 24px 40px;
+      }
+
+      .cta-content {
+        max-width: 640px;
+        margin: 0 auto;
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .cta-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 11px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+
+      .cta-link.primary {
+        background: white;
+        color: var(--color-primary);
+      }
+      .cta-link.primary:hover {
+        background: var(--color-surface);
+      }
+
+      .cta-link.secondary {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .cta-link.secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+
+      .footer {
+        background: var(--color-surface);
+        padding: 20px 40px;
+        text-align: center;
+        border-top: 1px solid var(--color-border);
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .footer-links a {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: var(--color-primary);
+      }
+
+      @media (max-width: 600px) {
+        .nav,
+        .hero,
+        .cta-bar,
+        .footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .main {
+          padding: 24px 20px 32px;
+        }
+        .download-card,
+        .quick-start {
+          padding: 20px;
+        }
+        .cta-content {
+          flex-direction: column;
+          align-items: center;
+        }
+        .cta-link {
+          width: 100%;
+          max-width: 220px;
+          justify-content: center;
+        }
+        .footer-links {
+          flex-direction: column;
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-content">
+        <a href="/alpha/about" class="nav-logo">nestora</a>
+        <div class="nav-links">
+          <a href="/alpha/about">About</a>
+          <a href="/alpha/welcome" class="active">Download</a>
+          <a href="/alpha/testing">How to Use</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <h1>Welcome to the Alpha</h1>
+      <p>
+        Thank you for helping us test Nestora. Your feedback will shape the
+        future of this app.
+      </p>
+    </section>
+
+    <div class="main">
+      <div class="download-card">
+        <h2>Download Nestora</h2>
+        <p>Get the app via TestFlight, Apple's beta testing platform.</p>
+        <a href="YOUR_TESTFLIGHT_LINK_HERE" class="download-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-4-4 1.41-1.41L11 13.17l5.59-5.59L18 9l-7 7z"
+            />
+          </svg>
+          Open in TestFlight
+        </a>
+        <div class="requirements">
+          <h4>Requirements</h4>
+          <ul>
+            <li>iPhone 15 Pro or newer</li>
+            <li>iOS 17.0 or later</li>
+            <li>
+              <a
+                href="https://apps.apple.com/app/testflight/id899247664"
+                target="_blank"
+                >TestFlight app</a
+              >
+              from the App Store
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quick-start">
+        <h3>Quick Start</h3>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <div class="step-content">
+              <h4>Install TestFlight</h4>
+              <p>
+                Download
+                <a
+                  href="https://apps.apple.com/app/testflight/id899247664"
+                  target="_blank"
+                  >TestFlight</a
+                >
+                from the App Store.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <div class="step-content">
+              <h4>Tap Download Link</h4>
+              <p>Click "Open in TestFlight" above to install Nestora.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <div class="step-content">
+              <h4>Create Account</h4>
+              <p>Open Nestora, sign up, and connect your email.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <div class="step-content">
+              <h4>Start Exploring</h4>
+              <p>Check the Review queue, calendar, and document vault.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cta-bar">
+      <div class="cta-content">
+        <a href="/alpha/about" class="cta-link secondary">About Nestora</a>
+        <a href="/alpha/testing" class="cta-link primary">How to Use →</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a href="https://nestora.ai/terms" target="_blank">Terms of Service</a>
+        <a href="https://nestora.ai/privacy" target="_blank">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script>
+      if (sessionStorage.getItem("nestora_alpha_auth") !== "true") {
+        window.location.href = "/alpha";
+      }
+    </script>
+  </body>
+</html>
