@@ -1100,18 +1100,57 @@
       // Email signup form handling
       const form = document.getElementById("signupForm");
       const successMessage = document.getElementById("successMessage");
+      const APPSYNC_URL =
+        "https://nwdqbbdgqbe4zlxinig4pnma34.appsync-api.us-east-1.amazonaws.com/graphql";
+      const API_KEY = "da2-m7dvfujlljbztlbsbsxnldscqm";
+      const CREATE_WAITLIST = `
+        mutation CreateWaitingList($input: CreateWaitingListInput!) {
+          createWaitingList(input: $input) {
+            email
+          }
+        }
+      `;
 
-      form.addEventListener("submit", function (e) {
+      form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         const email = document.getElementById("emailInput").value;
 
-        // Simulate form submission
-        form.classList.add("hidden");
-        successMessage.classList.add("show");
-
         // In production, you would send this to your backend
-        console.log("Email submitted:", email);
+        try {
+          const res = await fetch(APPSYNC_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": API_KEY,
+            },
+            body: JSON.stringify({
+              query: CREATE_WAITLIST,
+              variables: {
+                input: {
+                  email,
+                },
+              },
+            }),
+          });
+          // Check for duplicate email error
+          const json = await res.json();
+          if (json.errors?.length) {
+            console.warn("Duplicate or other error:", json.errors);
+
+            successMessage.querySelector("span").textContent =
+              "You're already on the waitlist!";
+          }
+
+          // Show confirmation
+          form.classList.add("hidden");
+          successMessage.classList.add("show");
+        } catch (error) {
+          console.error("Error submitting to waitlist:", error);
+          alert(
+            "There was an error submitting your email. Please try again later."
+          );
+        }
       });
 
       // Add subtle parallax effect on mouse move for orbs
